@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta name= "viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sorteo de orden de votos</title>
+		<link href="styles.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+	html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+ 	padding: 0; /*relleno a 0*/
+ 	margin: 0;  /*margen a 0 */
+ 	font-size: 100%;
+ 	font-weight: normal;
+	}
+
+	html {
+		background-color: slategray;
+   	    background-image: url(images/frente-tribunales.jpeg);
+   	    background-size: 1090px 661px;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        }
+
+    h1 {
+    	width:760px;
+    	margin-top: 20px;
+    	margin-left: auto;
+        margin-left: auto;
+        margin-right: auto;
+        color: black;
+    	font-size:30px;
+    	background-color: whitesmoke;
+    	font-weight: bold;
+    	text-align: center;
+    	border-style: double;
+    	border-color: black;
+        }
+      h1 {
+  		animation: slideIn 1.0s ease;
+		}
+		@keyframes slideIn {
+  		from {
+    	transform: translateX(-100%);
+  			}
+  		to {
+    	transform: translateX(0);
+  			}
+		}
+
+
+	#parr1 {
+		width:760px;
+		margin-top: 20px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 20px;
+		color: black;
+		font-weight: bolder;
+		font-size: 20px;
+		background-color: whitesmoke;
+		text-align: center;
+		border-style: double;
+		border-color: black;
+	}
+
+	#parr1 {
+  		animation: slideIn 1.0s ease;
+		}
+		@keyframes slideIn {
+  		from {
+    	transform: translateX(-100%);
+  		}
+  		to {
+    	transform: translateX(0);
+  		}
+		}
+
+
+	#sorteos-gral {
+		margin-top: -170px;
+		margin-left: -850px;
+		margin-right: auto;
+		font-size: 25px;
+		color: white;
+		list-style-type: none;
+		text-transform: uppercase;
+		text-align: center;
+
+	}
+
+	#sorteo-part  {
+		border-style: double;
+		border-color: white;
+		width: 200px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #1fc1d5;
+	}
+
+	#sorteo-part {
+  		animation: zoomIn 1.0s ease;
+	}
+
+	@keyframes zoomIn {
+  	from {
+    	transform: scale(0);
+  		}
+  	to {
+    	transform: scale(1);
+  		}
+	}
+
+	li {
+  		transition: transform 0.3s ease-in-out;
+	}
+
+	li:hover {
+  		transform: scale(1.2);
+	}
+
+	#resultado  {
+		border-style: double;
+		border-color: white;
+		width: 400px;
+		height: 150px;
+		margin-top: 20px;
+    	margin-left: auto;
+        margin-left: auto;
+        margin-right: auto;
+		background-color: #16cd46;
+		font-size: 25px;
+		color: white;
+		list-style-type: none;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	#resultado {
+  		animation: zoomIn 1.0s ease;
+	}
+
+
+
+
+			</style>
+
+	</head>
+
+<body>
+	<div id= "contenedor_titulo"> <h1 id="titulo"> Programa de sorteos de autos y sentencias - Cámara II Sala I de la ciudad de Paraná </h1></div>
+
+	<div>
+		
+		<p id="resultado"> Resultado de sorteo: <br> <span id="resultado-sorteo"></span></p>
+		
+	</div>
+
+	
+	<div>
+	<ul id= "sorteos-gral">
+		<li id="sorteo-part"> Sorteo causas 75 días </li>
+		<li id="sorteo-part"> Sorteo causas 60 días </li>
+		<li id="sorteo-part"> Sorteo causas 30 días </li>
+		<li id="sorteo-part"> Sorteo causas 20 días </li>
+		<li id="sorteo-part"> Sorteo causas 10 días </li>
+		<li id="sorteo-part"> Sorteo causas 5  días </li>
+	</ul>
+	</div>
+
+    
+
+
+	<div id= "contenedor_parr_1"> <p id="parr1"> Vocales: Gabriela Teresita Mastaglia, María Andrea Morales y María Andrea Pereyra. Secretaría: Noelia Estefanía Telagorri </p>
+	</div>
+
+	
+	<script>
+	//definir la clase vocalia - OK
+	//definir 3 propiedades = vocalia1, vocalia2, vocalia3 - OK
+	// definir función sorteo - crear array con numeros asociados a las posibilidades de sorteo? (ej 1_ Pereyra, Mastaglia, Morales)
+	//ver: esta tomando el resultado como otro li (porque está como li je). Hay que modificar la funcion o armarlo en <p>
+
+
+	class Camara {
+		constructor (vocalia1, vocalia2, vocalia3, secretaria) {
+			this._vocalia1 = vocalia1
+			this._vocalia2 = vocalia2
+			this._vocalia3 = vocalia3
+			this._secretaria = secretaria
+		}
+		
+		
+			get vocalia1 (){
+			return this._vocalia1
+		}
+			set vocalia1 (nombre) {
+			this._vocalia1=nombre
+		}
+
+
+			get vocalia2 (){
+			return this._vocalia2
+		}
+			set vocalia2 (nombre) {
+			this._vocalia2=nombre
+		}
+
+
+			get vocalia3 (){
+			return this._vocalia3
+		}
+			set vocalia3 (nombre) {
+			this._vocalia3=nombre
+		}
+	
+	
+			get secretaria (){
+			return this._secretaria
+		}
+			set secretaria (nombre) {
+			this._secretaria=nombre
+		}
+	}
+
+	const camaraCivil = new Camara()
+	camaraCivil.vocalia1 = "Gabriela Teresita Mastaglia"
+	camaraCivil.vocalia2 = "María Andrea Morales"
+	camaraCivil.vocalia3 = "María Andrea Pereyra"
+	camaraCivil.secretaria = "Noelia Estefanía Telagorri"
+	
+	
+	const composicionCamara = [{"orden 1": "Gabriela Teresita Mastaglia, María Andrea Morales y María Andrea Pereyra"}, {"orden 2": "Gabriela Teresita Mastaglia, María Andrea Pereyra y María Andrea Morales"}, {"orden 3": "María Andrea Morales, Gabriela Teresita Mastaglia y María Andrea Pereyra"}, {"orden 4": "María Andrea Morales, María Andrea Pereyra y Gabriela Teresita Mastaglia"}, {"orden 5": "María Andrea Pereyra, Gabriela Teresita Mastaglia y María Andrea Morales"}, {"orden 6": "María Andrea Pereyra, María Andrea Morales y Gabriela Teresita Mastaglia"}]
+	 
+	const sorteo = function () {return composicionCamara[Math.floor(Math.random() * composicionCamara.length)]}
+	console.log(sorteo())
+
+
+	 // let sorteoPart = document.getElementById("sorteo-part");
+	 // 	sorteoPart.addEventListener("click", function() {
+  	 // let resultado = Object.values(sorteo())[0]
+  	 // let resultadoP = document.getElementById("resultado-sorteo");
+  	 // 	resultadoP.textContent = resultado
+
+  	
+  	let liElements = document.querySelectorAll("li")
+		for (let i = 0; i < liElements.length; i++) {
+  			liElements[i].addEventListener("click", function() {
+    		let resultado = Object.values(sorteo())[0]
+    		let resultadoP = document.getElementById("resultado-sorteo")
+    		resultadoP.textContent = resultado
+  })
+}
+
+
+
+	
+
+
+	
+
+</script>
+
+
+
+
+	
+</body>
+</html>
