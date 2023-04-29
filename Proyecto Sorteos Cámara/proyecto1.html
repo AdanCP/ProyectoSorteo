@@ -88,7 +88,7 @@
 
 	}
 
-	#sorteo-part  {
+	#sorteo-part1  {
 		border-style: double;
 		border-color: white;
 		width: 200px;
@@ -100,7 +100,175 @@
 		cursor: pointer;
 	}
 
-	#sorteo-part {
+	#sorteo-part1 {
+  		animation: zoomIn 1.0s ease;
+	}
+
+	@keyframes zoomIn {
+  	from {
+    	transform: scale(0);
+  		}
+  	to {
+    	transform: scale(1);
+  		}
+	}
+
+	li {
+  		transition: transform 0.3s ease-in-out;
+	}
+
+	li:hover {
+  		transform: scale(1.2);
+	}
+
+
+	#sorteo-part2  {
+		border-style: double;
+		border-color: white;
+		width: 200px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #84dce7b3;
+		cursor: pointer;
+	}
+
+	#sorteo-part2 {
+  		animation: zoomIn 1.0s ease;
+	}
+
+	@keyframes zoomIn {
+  	from {
+    	transform: scale(0);
+  		}
+  	to {
+    	transform: scale(1);
+  		}
+	}
+
+	li {
+  		transition: transform 0.3s ease-in-out;
+	}
+
+	li:hover {
+  		transform: scale(1.2);
+	}
+
+	#sorteo-part3  {
+		border-style: double;
+		border-color: white;
+		width: 200px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #84dce7b3;
+		cursor: pointer;
+	}
+
+	#sorteo-part3 {
+  		animation: zoomIn 1.0s ease;
+	}
+
+	@keyframes zoomIn {
+  	from {
+    	transform: scale(0);
+  		}
+  	to {
+    	transform: scale(1);
+  		}
+	}
+
+	li {
+  		transition: transform 0.3s ease-in-out;
+	}
+
+	li:hover {
+  		transform: scale(1.2);
+	}
+
+	#sorteo-part4  {
+		border-style: double;
+		border-color: white;
+		width: 200px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #84dce7b3;
+		cursor: pointer;
+	}
+
+	#sorteo-part4 {
+  		animation: zoomIn 1.0s ease;
+	}
+
+	@keyframes zoomIn {
+  	from {
+    	transform: scale(0);
+  		}
+  	to {
+    	transform: scale(1);
+  		}
+	}
+
+	li {
+  		transition: transform 0.3s ease-in-out;
+	}
+
+	li:hover {
+  		transform: scale(1.2);
+	}
+	
+
+	#sorteo-part5  {
+		border-style: double;
+		border-color: white;
+		width: 200px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #84dce7b3;
+		cursor: pointer;
+	}
+
+	#sorteo-part5 {
+  		animation: zoomIn 1.0s ease;
+	}
+
+
+	@keyframes zoomIn {
+  	from {
+    	transform: scale(0);
+  		}
+  	to {
+    	transform: scale(1);
+  		}
+	}
+
+	li {
+  		transition: transform 0.3s ease-in-out;
+	}
+
+	li:hover {
+  		transform: scale(1.2);
+	}
+
+	#sorteo-part6  {
+		border-style: double;
+		border-color: white;
+		width: 200px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #84dce7b3;
+		cursor: pointer;
+	}
+
+	#sorteo-part6 {
   		animation: zoomIn 1.0s ease;
 	}
 
@@ -137,8 +305,7 @@
 		text-align: center;
 	}
 
-	#resultado {
-  		animation: zoomIn 1.0s ease;
+	#resultado {animation: zoomIn 1.0s ease;
 	}
 
 	#ingreso   {
@@ -171,6 +338,7 @@
 
 	</head>
 
+	
 <body>
 	<div id= "contenedor_titulo"> <h1 id="titulo"> Programa de sorteos de autos y sentencias - Cámara II Sala I de la ciudad de Paraná </h1></div>
 
@@ -188,12 +356,12 @@
 	
 	<div>
 	<ul id= "sorteos-gral">
-		<li id="sorteo-part"> Sorteo causas 75 días </li>
-		<li id="sorteo-part"> Sorteo causas 60 días </li>
-		<li id="sorteo-part"> Sorteo causas 30 días </li>
-		<li id="sorteo-part"> Sorteo causas 20 días </li>
-		<li id="sorteo-part"> Sorteo causas 10 días </li>
-		<li id="sorteo-part"> Sorteo causas 5  días </li>
+		<li  id = "sorteo-part1"> Sorteo causas 75 días </li>
+		<li  id = "sorteo-part2"> Sorteo causas 60 días </li>
+		<li  id = "sorteo-part3"> Sorteo causas 30 días </li>
+		<li  id = "sorteo-part4"> Sorteo causas 20 días </li>
+		<li  id = "sorteo-part5"> Sorteo causas 10 días </li>
+		<li  id = "sorteo-part6"> Sorteo causas 5  días  </li>
 	</ul>
 	</div>
 
@@ -202,102 +370,8 @@
 
 	<div id= "contenedor_parr_1"> <p id="parr1"> Vocales: Gabriela Teresita Mastaglia, María Andrea Morales y María Andrea Pereyra. Secretaría: Noelia Estefanía Telagorri </p>
 	</div>
-
 	
-	<script>
-	//definir la clase vocalia - OK
-	//definir 3 propiedades = vocalia1, vocalia2, vocalia3 - OK
-	// definir función sorteo - crear array con numeros asociados a las posibilidades de sorteo? (ej 1_ Pereyra, Mastaglia, Morales)
-	//ver: esta tomando el resultado como otro li (porque está como li je). Hay que modificar la funcion o armarlo en <p>
+	<script src="./script.js"></script>
 
-
-	class Camara {
-		constructor (vocalia1, vocalia2, vocalia3, secretaria) {
-			this._vocalia1 = vocalia1
-			this._vocalia2 = vocalia2
-			this._vocalia3 = vocalia3
-			this._secretaria = secretaria
-		}
-		
-		
-			get vocalia1 (){
-			return this._vocalia1
-		}
-			set vocalia1 (nombre) {
-			this._vocalia1=nombre
-		}
-
-
-			get vocalia2 (){
-			return this._vocalia2
-		}
-			set vocalia2 (nombre) {
-			this._vocalia2=nombre
-		}
-
-
-			get vocalia3 (){
-			return this._vocalia3
-		}
-			set vocalia3 (nombre) {
-			this._vocalia3=nombre
-		}
-	
-	
-			get secretaria (){
-			return this._secretaria
-		}
-			set secretaria (nombre) {
-			this._secretaria=nombre
-		}
-	}
-
-	const camaraCivil = new Camara()
-	camaraCivil.vocalia1 = "Gabriela Teresita Mastaglia"
-	camaraCivil.vocalia2 = "María Andrea Morales"
-	camaraCivil.vocalia3 = "María Andrea Pereyra"
-	camaraCivil.secretaria = "Noelia Estefanía Telagorri"
-	
-	const composicionCamara = [
-  {"orden 1": "Gabriela Teresita Mastaglia, María Andrea Morales y María Andrea Pereyra"},
-  {"orden 2": "Gabriela Teresita Mastaglia, María Andrea Pereyra y María Andrea Morales"},
-  {"orden 3": "María Andrea Morales, Gabriela Teresita Mastaglia y María Andrea Pereyra"},
-  {"orden 4": "María Andrea Morales, María Andrea Pereyra y Gabriela Teresita Mastaglia"},
-  {"orden 5": "María Andrea Pereyra, Gabriela Teresita Mastaglia y María Andrea Morales"},
-  {"orden 6": "María Andrea Pereyra, María Andrea Morales y Gabriela Teresita Mastaglia"}
-	]
-
-	let opcionesSorteadas = [];
-
-	const sorteo = function() {
-  	if (opcionesSorteadas.length === composicionCamara.length) {
-    opcionesSorteadas = []
-  	}
-  	let opcionSorteada
-  		do { opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]}
-  		while (opcionesSorteadas.includes(opcionSorteada))
-  	opcionesSorteadas.push(opcionSorteada)
-  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0]
-  	return opcionSorteadaTexto;
-	}
-
-	const clickEnLi = function() {
-  	let resultado = sorteo()
-  	let resultadoParrafo = document.getElementById("resultado-sorteo")
-  	resultadoParrafo.textContent = resultado
-	}
-
-	let todosLi = document.querySelectorAll("li");
-	for (let i = 0; i < todosLi.length; i++) {todosLi[i].addEventListener("click", clickEnLi);
-	}
-
-
-
-</script>
-
-
-
-
-	
 </body>
 </html>
