@@ -2,7 +2,37 @@
 	//definir 3 propiedades = vocalia1, vocalia2, vocalia3 - OK
 	// definir función sorteo - crear array con numeros asociados a las posibilidades de sorteo? (ej 1_ Pereyra, Mastaglia, Morales)
 	//ver: esta tomando el resultado como otro li (porque está como li je). Hay que modificar la funcion o armarlo en <p>
+	
+	//indexedDB
+	var openRequest = indexedDB.open("test",1)
 
+	var idbSupported = false;
+	var db;
+	document.addEventListener("DOMContentLoaded", function(){
+    if("indexedDB" in window) {
+        idbSupported = true;
+    }
+    if(idbSupported) {
+        var openRequest = indexedDB.open("test_v2",1);
+        openRequest.onupgradeneeded = function(e) {
+            console.log("running onupgradeneeded");
+            var thisDB = e.target.result;
+            if(!thisDB.objectStoreNames.contains("firstOS")) {
+                thisDB.createObjectStore("firstOS");
+            }
+        }
+        openRequest.onsuccess = function(e) {
+            console.log("Success!");
+            db = e.target.result;
+        }
+        openRequest.onerror = function(e) {
+            console.log("Error");
+            console.dir(e);
+        }
+    }
+	},false)
+
+	//
 
 	class Camara {
 		constructor (vocalia1, vocalia2, vocalia3, secretaria) {
@@ -59,6 +89,11 @@
   {"orden 5": "María Andrea Pereyra, Gabriela Teresita Mastaglia y María Andrea Morales"},
   {"orden 6": "María Andrea Pereyra, María Andrea Morales y Gabriela Teresita Mastaglia"}
 	]
+//ingreso causa
+	
+
+//
+
 
 	let opcionesSorteadas1 = []
 	const sorteo1 = function() {
@@ -70,7 +105,7 @@
   		while (opcionesSorteadas1.includes(opcionSorteada))
   	opcionesSorteadas1.push(opcionSorteada)
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0]
-  	return opcionSorteadaTexto;
+  	return opcionSorteadaTexto 
 	}
 
 
@@ -143,13 +178,12 @@
   	return opcionSorteadaTexto;
 	}
 
-	
-	
+		
 	const clickEnLi1 = function() {
-  	let resultado = sorteo1()
+	let resultado = sorteo1()
   	let resultadoParrafo = document.getElementById("resultado-sorteo")
   	resultadoParrafo.textContent = resultado
-	}
+  	}
 
 	const clickEnLi2 = function() {
   	let resultado = sorteo2()
@@ -206,4 +240,5 @@
 	for (let i = 0; i < sorteo_5.length; i++) {sorteo_5[i].addEventListener("click", clickEnLi6);
 	}
 
+	
 

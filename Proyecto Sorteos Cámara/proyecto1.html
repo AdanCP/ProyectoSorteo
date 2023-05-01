@@ -25,7 +25,6 @@
     	width:760px;
     	margin-top: 20px;
     	margin-left: auto;
-        margin-left: auto;
         margin-right: auto;
         color: black;
     	font-size:30px;
@@ -294,7 +293,8 @@
 		border-color: white;
 		width: 400px;
 		height: 150px;
-		margin-top: 20px;
+		margin-top: 125px;
+		margin-bottom: 125px;
     	margin-left: auto;
         margin-right: auto;
 		background-color: #f4b77be3;
@@ -308,31 +308,6 @@
 	#resultado {animation: zoomIn 1.0s ease;
 	}
 
-	#ingreso   {
-		border-style: double;
-		border-color: white;
-		width: 400px;
-		height: 150px;
-		margin-top: 20px;
-    	margin-left: auto;
-        margin-right: auto;
-		background-color: #bbdefbe3;
-		font-size: 25px;
-		color: white;
-		list-style-type: none;
-		text-transform: uppercase;
-		text-align: center;
-	}
-
-	#ingreso {
-  		animation: zoomIn 1.0s ease;
-	}
-
-	#input {
-		width: 300px;
-	}
-
-
 
 			</style>
 
@@ -342,12 +317,7 @@
 <body>
 	<div id= "contenedor_titulo"> <h1 id="titulo"> Programa de sorteos de autos y sentencias - Cámara II Sala I de la ciudad de Paraná </h1></div>
 
-	<div>
-		<form method="post" action="action.php" id="ingreso">
-        Ingreso de carátula <input name="ingresacaratula" type="text" value="" id="input"/>
-        <button type="submit" class="btn-enviar">Enviar</button>
-        </form>
-	</div>
+
 
 	<div>
 		<p id="resultado"> Resultado de sorteo: <br> <span id="resultado-sorteo"></span></p>
@@ -372,6 +342,8 @@
 	</div>
 	
 	<script src="./script.js"></script>
+	<script src="./sweetalert2.js"></script>
+
 
 </body>
 </html>
