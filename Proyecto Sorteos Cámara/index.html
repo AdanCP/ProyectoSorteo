@@ -125,7 +125,7 @@
 	<div id= "contenedor_titulo"> <h1 id="titulo"> Programa de sorteos de autos y sentencias - Cámara II Sala I de la ciudad de Paraná </h1></div>
 
 	<div>
-		<form method="post" action="action.php" id="ingreso">
+		<form method="post" action="proyecto1.html" id="ingreso">
         Ingreso de carátula <input name="ingresacaratula" type="text" value="" id="input"/>
         <button type="submit" id="btn-enviar">Enviar</button>
         </form>
@@ -138,6 +138,21 @@
 	
 	<script src="./script.js"></script>
 	<script src="./sweetalert2.js"></script>
+	<script>
+      // Esperar a que se envíe el formulario
+      document.getElementById("ingreso").addEventListener("submit", function(event) {
+        // Detener el comportamiento por defecto del formulario
+        event.preventDefault();
+
+        // Obtener el valor ingresado en el campo
+        const valor = document.getElementById("input").value;
+
+        // Redirigir a la página de destino y pasar el valor como parámetro en la URL
+        window.location.href = "proyecto1.html?ingresacaratula=" + valor;
+      });
+    </script>
+
+
 
 
 </body>

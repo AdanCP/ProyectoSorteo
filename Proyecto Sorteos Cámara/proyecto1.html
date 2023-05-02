@@ -49,10 +49,10 @@
 
 	#parr1 {
 		width:760px;
-		margin-top: 20px;
+		margin-top: 50px;
 		margin-left: auto;
 		margin-right: auto;
-		margin-bottom: 20px;
+		margin-bottom: 17px;
 		color: black;
 		font-weight: bolder;
 		font-size: 20px;
@@ -74,9 +74,39 @@
   		} 
 		}
 
+	#causa-ingresada {
+		border-style: double;
+		border-color: white;
+		width: 600px;
+		height: 90px;
+		margin-top: 40px;
+		margin-bottom: 10px;
+    	margin-left: auto;
+        margin-right: auto;
+		background-color: #bbdefbe3;
+		font-size: 25px;
+		color: white;
+		list-style-type: none;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+	#causa-ingresada {
+		opacity: 0;
+  		animation: aparecer 1.5s forwards;
+	}
+		@keyframes aparecer {
+  		from {
+    		opacity: 0;
+  		}
+  		to {
+    	opacity: 1;
+  		}
+	}
+
 
 	#sorteos-gral {
-		margin-top: -335px;
+		margin-top: -497px;
 		margin-left: -850px;
 		margin-right: auto;
 		font-size: 25px;
@@ -317,6 +347,9 @@
 <body>
 	<div id= "contenedor_titulo"> <h1 id="titulo"> Programa de sorteos de autos y sentencias - Cámara II Sala I de la ciudad de Paraná </h1></div>
 
+	<div> 
+	<p  id="causa-ingresada"></p>
+	</div>
 
 
 	<div>
@@ -343,7 +376,14 @@
 	
 	<script src="./script.js"></script>
 	<script src="./sweetalert2.js"></script>
+	<script>
+		
+      // Obtener el valor ingresado del parámetro en la URL
+      const valor_recuperado = new URLSearchParams(window.location.search).get("ingresacaratula");
 
+      // Mostrar el valor en la página
+      document.getElementById("causa-ingresada").innerHTML = valor_recuperado;
+  	</script>
 
 </body>
 </html>
