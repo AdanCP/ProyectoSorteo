@@ -1,39 +1,3 @@
-	//definir la clase vocalia - OK
-	//definir 3 propiedades = vocalia1, vocalia2, vocalia3 - OK
-	// definir función sorteo - crear array con numeros asociados a las posibilidades de sorteo? (ej 1_ Pereyra, Mastaglia, Morales)
-	//ver: esta tomando el resultado como otro li (porque está como li je). Hay que modificar la funcion o armarlo en <p>
-	
-	//indexedDB
-	var openRequest = indexedDB.open("test",1)
-
-	var idbSupported = false;
-	var db;
-	document.addEventListener("DOMContentLoaded", function(){
-    if("indexedDB" in window) {
-        idbSupported = true;
-    }
-    if(idbSupported) {
-        var openRequest = indexedDB.open("test_v2",1);
-        openRequest.onupgradeneeded = function(e) {
-            console.log("running onupgradeneeded");
-            var thisDB = e.target.result;
-            if(!thisDB.objectStoreNames.contains("firstOS")) {
-                thisDB.createObjectStore("firstOS");
-            }
-        }
-        openRequest.onsuccess = function(e) {
-            console.log("Success!");
-            db = e.target.result;
-        }
-        openRequest.onerror = function(e) {
-            console.log("Error");
-            console.dir(e);
-        }
-    }
-	},false)
-
-	//
-
 	class Camara {
 		constructor (vocalia1, vocalia2, vocalia3, secretaria) {
 			this._vocalia1 = vocalia1
@@ -89,96 +53,97 @@
   {"orden 5": "María Andrea Pereyra, Gabriela Teresita Mastaglia y María Andrea Morales"},
   {"orden 6": "María Andrea Pereyra, María Andrea Morales y Gabriela Teresita Mastaglia"}
 	]
-//ingreso causa
-	
 
-//
+	/////////////
 
-
-	let opcionesSorteadas1 = []
+	let opcionesSorteadas1 = JSON.parse(localStorage.getItem("opcionesSorteadas1")) || [];
 	const sorteo1 = function() {
-	if (opcionesSorteadas1.length === composicionCamara.length) {
-    opcionesSorteadas1 = []
-  	}
-  	let opcionSorteada
-  		do { opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]}
+  		if (opcionesSorteadas1.length === composicionCamara.length) {
+    	opcionesSorteadas1 = [];
+ 		 }
+  	let opcionSorteada;
+  		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
   		while (opcionesSorteadas1.includes(opcionSorteada))
-  	opcionesSorteadas1.push(opcionSorteada)
-  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0]
-  	return opcionSorteadaTexto 
+  	opcionesSorteadas1.push(opcionSorteada);
+  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
+  	localStorage.setItem("opcionesSorteadas1", JSON.stringify(opcionesSorteadas1));  ////ver!!! para mí acá está el error
+  	return opcionSorteadaTexto;
 	}
 
-
-	let opcionesSorteadas2 = []
+	let opcionesSorteadas2 = JSON.parse(localStorage.getItem("opcionesSorteadas2")) || [];
 	const sorteo2 = function() {
-	if (opcionesSorteadas2.length === composicionCamara.length) {
-    opcionesSorteadas2 = []
-  	}
-  	let opcionSorteada
-  		do { opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]}
+  		if (opcionesSorteadas2.length === composicionCamara.length) {
+    	opcionesSorteadas2 = [];
+ 		 }
+  	let opcionSorteada;
+  		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
   		while (opcionesSorteadas2.includes(opcionSorteada))
-  	opcionesSorteadas2.push(opcionSorteada)
-  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0]
+  	opcionesSorteadas2.push(opcionSorteada);
+  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
+  	localStorage.setItem("opcionesSorteadas2", JSON.stringify(opcionesSorteadas2));
   	return opcionSorteadaTexto;
 	}
 
-
-	let opcionesSorteadas3 = []
+	let opcionesSorteadas3 = JSON.parse(localStorage.getItem("opcionesSorteadas3")) || [];
 	const sorteo3 = function() {
-	if (opcionesSorteadas3.length === composicionCamara.length) {
-    opcionesSorteadas3 = []
-  	}
-  	let opcionSorteada
-  		do { opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]}
+  		if (opcionesSorteadas3.length === composicionCamara.length) {
+    	opcionesSorteadas3 = [];
+ 		 }
+  	let opcionSorteada;
+  		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
   		while (opcionesSorteadas3.includes(opcionSorteada))
-  	opcionesSorteadas3.push(opcionSorteada)
-  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0]
+  	opcionesSorteadas3.push(opcionSorteada);
+  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
+  	localStorage.setItem("opcionesSorteadas3", JSON.stringify(opcionesSorteadas3));
   	return opcionSorteadaTexto;
 	}
 
-
-	let opcionesSorteadas4 =[]
+	let opcionesSorteadas4 = JSON.parse(localStorage.getItem("opcionesSorteadas4")) || [];
 	const sorteo4 = function() {
-	if (opcionesSorteadas4.length === composicionCamara.length) {
-    opcionesSorteadas4 = []
-  	}
-  	let opcionSorteada
-  		do { opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]}
+  		if (opcionesSorteadas4.length === composicionCamara.length) {
+    	opcionesSorteadas4 = [];
+ 		 }
+  	let opcionSorteada;
+  		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
   		while (opcionesSorteadas4.includes(opcionSorteada))
-  	opcionesSorteadas4.push(opcionSorteada)
-  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0]
+  	opcionesSorteadas4.push(opcionSorteada);
+  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
+  	localStorage.setItem("opcionesSorteadas4", JSON.stringify(opcionesSorteadas4));
   	return opcionSorteadaTexto;
 	}
 
-
-	let opcionesSorteadas5 = []
+	let opcionesSorteadas5 = JSON.parse(localStorage.getItem("opcionesSorteadas5")) || [];
 	const sorteo5 = function() {
-	if (opcionesSorteadas5.length === composicionCamara.length) {
-    opcionesSorteadas5 = []
-  	}
-  	let opcionSorteada
-  		do { opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]}
+  		if (opcionesSorteadas5.length === composicionCamara.length) {
+    	opcionesSorteadas5 = [];
+ 		 }
+  	let opcionSorteada;
+  		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
   		while (opcionesSorteadas5.includes(opcionSorteada))
-  	opcionesSorteadas5.push(opcionSorteada)
-  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0]
+  	opcionesSorteadas5.push(opcionSorteada);
+  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
+  	localStorage.setItem("opcionesSorteadas5", JSON.stringify(opcionesSorteadas5));
   	return opcionSorteadaTexto;
 	}
 
-
-	let opcionesSorteadas6 = []
+	let opcionesSorteadas6 = JSON.parse(localStorage.getItem("opcionesSorteadas6")) || [];
 	const sorteo6 = function() {
-	if (opcionesSorteadas6.length === composicionCamara.length) {
-    opcionesSorteadas6 = []
-  	}
-  	let opcionSorteada
-  		do { opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]}
+  		if (opcionesSorteadas6.length === composicionCamara.length) {
+    	opcionesSorteadas6 = [];
+ 		 }
+  	let opcionSorteada;
+  		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
   		while (opcionesSorteadas6.includes(opcionSorteada))
-  	opcionesSorteadas6.push(opcionSorteada)
-  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0]
+  	opcionesSorteadas6.push(opcionSorteada);
+  	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
+  	localStorage.setItem("opcionesSorteadas6", JSON.stringify(opcionesSorteadas6));
   	return opcionSorteadaTexto;
 	}
 
-		
+
+
+	////////
+
 	const clickEnLi1 = function() {
 	let resultado = sorteo1()
   	let resultadoParrafo = document.getElementById("resultado-sorteo")
@@ -215,6 +180,8 @@
   	resultadoParrafo.textContent = resultado
 	}
 
+
+	//////////
 
 	let sorteo75 = document.querySelectorAll("#sorteo-part1");
 	for (let i = 0; i < sorteo75.length; i++) {sorteo75[i].addEventListener("click", clickEnLi1);
