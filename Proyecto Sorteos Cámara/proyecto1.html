@@ -4,348 +4,22 @@
 		<meta name= "viewport" content="width=device-width, initial-scale=1.0">
 		<title>Sorteo de orden de votos</title>
 		<link href="styles.css" rel="stylesheet" type="text/css">
-	<style type="text/css">
-	html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
- 	padding: 0; /*relleno a 0*/
- 	margin: 0;  /*margen a 0 */
- 	font-size: 100%;
- 	font-weight: normal;
-	}
-
-	html {
-		background-color: slategray;
-   	    background-image: url(images/frente-tribunales.jpeg);
-   	    background-size: 1090px 661px;
-        background-repeat: no-repeat;
-        background-position: center;
-
-        }
-
-    h1 {
-    	width:760px;
-    	margin-top: 20px;
-    	margin-left: auto;
-        margin-right: auto;
-        color: black;
-    	font-size:30px;
-    	background-color: whitesmoke;
-    	font-weight: bold;
-    	text-align: center;
-    	border-style: double;
-    	border-color: black;
-        }
-      h1 {
-  		animation: slideIn 1.0s ease;
-		}
-		@keyframes slideIn {
-  		from {
-    	transform: translateX(-100%);
-  			}
-  		to {
-    	transform: translateX(0);
-  			}
-		}
-
-
-	#parr1 {
-		width:760px;
-		margin-top: 50px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 17px;
-		color: black;
-		font-weight: bolder;
-		font-size: 20px;
-		background-color: whitesmoke;
-		text-align: center;
-		border-style: double;
-		border-color: black;
-	}
-
-	#parr1 {
-  		animation: slideIn 1.0s ease;
-		}
-		@keyframes slideIn {
-  		from {
-    	transform: translateX(-100%);
-  		}
-  		to {
-    	transform: translateX(0);
-  		} 
-		}
-
-	#causa-ingresada {
-		border-style: double;
-		border-color: white;
-		width: 600px;
-		height: 90px;
-		margin-top: 40px;
-		margin-bottom: 10px;
-    	margin-left: auto;
-        margin-right: auto;
-		background-color: #bbdefbe3;
-		font-size: 25px;
-		color: white;
-		list-style-type: none;
-		text-transform: uppercase;
-		text-align: center;
-	}
-
-	#causa-ingresada {
-		opacity: 0;
-  		animation: aparecer 1.5s forwards;
-	}
-		@keyframes aparecer {
-  		from {
-    		opacity: 0;
-  		}
-  		to {
-    	opacity: 1;
-  		}
-	}
-
-
-	#sorteos-gral {
-		margin-top: -497px;
-		margin-left: -850px;
-		margin-right: auto;
-		font-size: 25px;
-		color: white;
-		list-style-type: none;
-		text-transform: uppercase;
-		text-align: center;
-
-	}
-
-	#sorteo-part1  {
-		border-style: double;
-		border-color: white;
-		width: 200px;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: #84dce7b3;
-		cursor: pointer;
-	}
-
-	#sorteo-part1 {
-  		animation: zoomIn 1.0s ease;
-	}
-
-	@keyframes zoomIn {
-  	from {
-    	transform: scale(0);
-  		}
-  	to {
-    	transform: scale(1);
-  		}
-	}
-
-	li {
-  		transition: transform 0.3s ease-in-out;
-	}
-
-	li:hover {
-  		transform: scale(1.2);
-	}
-
-
-	#sorteo-part2  {
-		border-style: double;
-		border-color: white;
-		width: 200px;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: #84dce7b3;
-		cursor: pointer;
-	}
-
-	#sorteo-part2 {
-  		animation: zoomIn 1.0s ease;
-	}
-
-	@keyframes zoomIn {
-  	from {
-    	transform: scale(0);
-  		}
-  	to {
-    	transform: scale(1);
-  		}
-	}
-
-	li {
-  		transition: transform 0.3s ease-in-out;
-	}
-
-	li:hover {
-  		transform: scale(1.2);
-	}
-
-	#sorteo-part3  {
-		border-style: double;
-		border-color: white;
-		width: 200px;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: #84dce7b3;
-		cursor: pointer;
-	}
-
-	#sorteo-part3 {
-  		animation: zoomIn 1.0s ease;
-	}
-
-	@keyframes zoomIn {
-  	from {
-    	transform: scale(0);
-  		}
-  	to {
-    	transform: scale(1);
-  		}
-	}
-
-	li {
-  		transition: transform 0.3s ease-in-out;
-	}
-
-	li:hover {
-  		transform: scale(1.2);
-	}
-
-	#sorteo-part4  {
-		border-style: double;
-		border-color: white;
-		width: 200px;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: #84dce7b3;
-		cursor: pointer;
-	}
-
-	#sorteo-part4 {
-  		animation: zoomIn 1.0s ease;
-	}
-
-	@keyframes zoomIn {
-  	from {
-    	transform: scale(0);
-  		}
-  	to {
-    	transform: scale(1);
-  		}
-	}
-
-	li {
-  		transition: transform 0.3s ease-in-out;
-	}
-
-	li:hover {
-  		transform: scale(1.2);
-	}
 	
-
-	#sorteo-part5  {
-		border-style: double;
-		border-color: white;
-		width: 200px;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: #84dce7b3;
-		cursor: pointer;
-	}
-
-	#sorteo-part5 {
-  		animation: zoomIn 1.0s ease;
-	}
-
-
-	@keyframes zoomIn {
-  	from {
-    	transform: scale(0);
-  		}
-  	to {
-    	transform: scale(1);
-  		}
-	}
-
-	li {
-  		transition: transform 0.3s ease-in-out;
-	}
-
-	li:hover {
-  		transform: scale(1.2);
-	}
-
-	#sorteo-part6  {
-		border-style: double;
-		border-color: white;
-		width: 200px;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-left: auto;
-		margin-right: auto;
-		background-color: #84dce7b3;
-		cursor: pointer;
-	}
-
-	#sorteo-part6 {
-  		animation: zoomIn 1.0s ease;
-	}
-
-	@keyframes zoomIn {
-  	from {
-    	transform: scale(0);
-  		}
-  	to {
-    	transform: scale(1);
-  		}
-	}
-
-	li {
-  		transition: transform 0.3s ease-in-out;
-	}
-
-	li:hover {
-  		transform: scale(1.2);
-	}
-
-	#resultado   {
-		border-style: double;
-		border-color: white;
-		width: 400px;
-		height: 150px;
-		margin-top: 125px;
-		margin-bottom: 125px;
-    	margin-left: auto;
-        margin-right: auto;
-		background-color: #f4b77be3;
-		font-size: 25px;
-		color: white;
-		list-style-type: none;
-		text-transform: uppercase;
-		text-align: center;
-	}
-
-	#resultado {animation: zoomIn 1.0s ease;
-	}
-
-
-			</style>
-
 	</head>
 
 	
 <body>
+	<div class="contenedor-general">
 	<div id= "contenedor_titulo"> <h1 id="titulo"> Programa de sorteos de autos y sentencias - Cámara II Sala I de la ciudad de Paraná </h1></div>
+
+	<div>
+		<form method="post" action="proyecto1.html" id="ingreso">
+        Ingreso de carátula <input name="ingresacaratula" type="text" value="" id="input"/>
+        <button type="submit" id="btn-enviar">Enviar</button>
+        </form>
+	</div>
+
+
 
 	<div> 
 	<p  id="causa-ingresada"></p>
@@ -359,30 +33,72 @@
 	
 	<div>
 	<ul id= "sorteos-gral">
-		<li  id = "sorteo-part1"> Sorteo causas 75 días </li>
-		<li  id = "sorteo-part2"> Sorteo causas 60 días </li>
-		<li  id = "sorteo-part3"> Sorteo causas 30 días </li>
-		<li  id = "sorteo-part4"> Sorteo causas 20 días </li>
-		<li  id = "sorteo-part5"> Sorteo causas 10 días </li>
-		<li  id = "sorteo-part6"> Sorteo causas 5  días  </li>
+		<div><li  id = "sorteo-part1" sonido-over = "sounds/clickOver-li.mp3" sonido-click = "sounds/confirmacion.mp3"> Sorteo causas 75 días </li> </div>
+		<div><li  id = "sorteo-part2" sonido-over = "sounds/clickOver-li.mp3" sonido-click = "sounds/confirmacion.mp3"> Sorteo causas 60 días </li> </div>
+		<div><li  id = "sorteo-part3" sonido-over = "sounds/clickOver-li.mp3" sonido-click = "sounds/confirmacion.mp3"> Sorteo causas 30 días </li> </div>
+		<div><li  id = "sorteo-part4" sonido-over = "sounds/clickOver-li.mp3" sonido-click = "sounds/confirmacion.mp3"> Sorteo causas 20 días </li> </div>
+		<div><li  id = "sorteo-part5" sonido-over = "sounds/clickOver-li.mp3" sonido-click = "sounds/confirmacion.mp3"> Sorteo causas 10 días </li> </div>
+		<div><li  id = "sorteo-part6" sonido-over = "sounds/clickOver-li.mp3" sonido-click = "sounds/confirmacion.mp3"> Sorteo causas 5  días  </li> </div>
+		
 	</ul>
 	</div>
 
     
 
 
-	<div id= "contenedor_parr_1"> <p id="parr1"> Vocales: Gabriela Teresita Mastaglia, María Andrea Morales y María Andrea Pereyra. Secretaría: Noelia Estefanía Telagorri </p>
+	<div id= "contenedor_parr_1"> <p id="parr1"> Vocales: Gabriela Teresita Mastaglia, María Andrea Morales y María Andrea Pereyra. 
+	Secretaría: Noelia Estefanía Telagorri </p>
+	</div>
 	</div>
 	
 	<script src="./script.js"></script>
 	<script src="./sweetalert2.js"></script>
 	<script>
-		
-      // Obtener el valor ingresado del parámetro en la URL
-      const valor_recuperado = new URLSearchParams(window.location.search).get("ingresacaratula");
+	//formulario
+	const formulario = document.getElementById('ingreso')
+  	const causaIngresada = document.getElementById('causa-ingresada')
+  	formulario.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const ingresoCaratula = document.getElementById('input').value
+    causaIngresada.textContent = "Para la causa: " + ingresoCaratula
+  	})
 
-      // Mostrar el valor en la página
-      document.getElementById("causa-ingresada").innerHTML = valor_recuperado;
+	//sonido mouseover
+	var sonidoSorteos = document.querySelectorAll('#sorteos-gral li[sonido-over]');
+  	sonidoSorteos.forEach(function(li) {
+    li.addEventListener('mouseover', function() {
+      var archivoAudio = this.getAttribute('sonido-over')
+      var audio = new Audio(archivoAudio)
+      audio.play()
+    })
+  	})
+
+	//sonido click sorteo
+	var sonidoClick = document.querySelectorAll('#sorteos-gral li[sonido-click]');
+  	sonidoClick.forEach(function(li) {
+    li.addEventListener('click', function() {
+      var archivoAudio = this.getAttribute('sonido-click')
+      var audio = new Audio(archivoAudio)
+      audio.play()
+    })
+  	})
+
+	//sonido teclado formulario
+	var sonidoTecla = 'sounds/sonido-teclado.mp3'
+	document.getElementById('input').addEventListener('input', function(event) {
+  	var audio = new Audio(sonidoTecla)
+  	audio.play()
+	})
+
+	//sonido Enviar
+	var sonidoEnviar = 'sounds/enviar.mp3'
+	document.getElementById('btn-enviar').addEventListener('click', function(event) {
+  	var audio = new Audio(sonidoEnviar)
+  	audio.play()
+	})
+
+
+
   	</script>
 
 </body>

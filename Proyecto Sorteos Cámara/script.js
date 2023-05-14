@@ -56,7 +56,7 @@
 
 	/////////////
 
-	let opcionesSorteadas1 = JSON.parse(localStorage.getItem("opcionesSorteadas1")) || [];
+ 	 let opcionesSorteadas1 = JSON.parse(localStorage.getItem("opcionesSorteadas1")) || [];
 	const sorteo1 = function() {
   		if (opcionesSorteadas1.length === composicionCamara.length) {
     	opcionesSorteadas1 = [];
@@ -68,7 +68,8 @@
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
   	localStorage.setItem("opcionesSorteadas1", JSON.stringify(opcionesSorteadas1));  ////ver!!! para mí acá está el error
   	return opcionSorteadaTexto;
-	}
+	} 
+
 
 	let opcionesSorteadas2 = JSON.parse(localStorage.getItem("opcionesSorteadas2")) || [];
 	const sorteo2 = function() {
