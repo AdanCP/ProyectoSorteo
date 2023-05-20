@@ -56,7 +56,7 @@
 
 	/////////////
 
- 	 let opcionesSorteadas1 = JSON.parse(localStorage.getItem("opcionesSorteadas1")) || [];
+/*  	let opcionesSorteadas1 = JSON.parse(localStorage.getItem("opcionesSorteadas1")) || [];
 	const sorteo1 = function() {
   		if (opcionesSorteadas1.length === composicionCamara.length) {
     	opcionesSorteadas1 = [];
@@ -69,7 +69,28 @@
   	localStorage.setItem("opcionesSorteadas1", JSON.stringify(opcionesSorteadas1));  ////ver!!! para mí acá está el error
   	return opcionSorteadaTexto;
 	} 
+ */
 
+	let opcionesSorteadas1 = JSON.parse(localStorage.getItem("opcionesSorteadas1")) || [];
+const sorteo1 = function() {
+  if (opcionesSorteadas1.length === composicionCamara.length) {
+    opcionesSorteadas1 = [];
+  }
+  let opcionSorteada;
+  do {
+    opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)];
+  } while (opcionesSorteadas1.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)));
+  opcionesSorteadas1.push(opcionSorteada);
+  let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
+  localStorage.setItem("opcionesSorteadas1", JSON.stringify(opcionesSorteadas1));
+  return opcionSorteadaTexto;
+}
+
+// Repite el mismo patrón para las demás funciones de sorteo (sorteo2, sorteo3, etc.)
+
+// Resto del código
+
+	
 
 	let opcionesSorteadas2 = JSON.parse(localStorage.getItem("opcionesSorteadas2")) || [];
 	const sorteo2 = function() {
@@ -78,7 +99,7 @@
  		 }
   	let opcionSorteada;
   		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
-  		while (opcionesSorteadas2.includes(opcionSorteada))
+		while (opcionesSorteadas2.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas2.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
   	localStorage.setItem("opcionesSorteadas2", JSON.stringify(opcionesSorteadas2));
@@ -92,7 +113,7 @@
  		 }
   	let opcionSorteada;
   		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
-  		while (opcionesSorteadas3.includes(opcionSorteada))
+  		while (opcionesSorteadas3.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas3.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
   	localStorage.setItem("opcionesSorteadas3", JSON.stringify(opcionesSorteadas3));
@@ -106,7 +127,7 @@
  		 }
   	let opcionSorteada;
   		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
-  		while (opcionesSorteadas4.includes(opcionSorteada))
+  		while (opcionesSorteadas4.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas4.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
   	localStorage.setItem("opcionesSorteadas4", JSON.stringify(opcionesSorteadas4));
@@ -120,7 +141,7 @@
  		 }
   	let opcionSorteada;
   		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
-  		while (opcionesSorteadas5.includes(opcionSorteada))
+  		while (opcionesSorteadas5.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas5.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
   	localStorage.setItem("opcionesSorteadas5", JSON.stringify(opcionesSorteadas5));
@@ -134,7 +155,7 @@
  		 }
   	let opcionSorteada;
   		do {opcionSorteada = composicionCamara[Math.floor(Math.random() * composicionCamara.length)]} 
-  		while (opcionesSorteadas6.includes(opcionSorteada))
+  		while (opcionesSorteadas6.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas6.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
   	localStorage.setItem("opcionesSorteadas6", JSON.stringify(opcionesSorteadas6));
@@ -207,6 +228,13 @@
 	let sorteo_5 = document.querySelectorAll("#sorteo-part6");
 	for (let i = 0; i < sorteo_5.length; i++) {sorteo_5[i].addEventListener("click", clickEnLi6);
 	}
+
+	
+	  
+	
+
+	  
+	  
 
 	
 
