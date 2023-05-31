@@ -71,7 +71,7 @@
 	} 
  */
 
-	let opcionesSorteadas1 = JSON.parse(localStorage.getItem("opcionesSorteadas1")) || [];
+let opcionesSorteadas1 = JSON.parse(localStorage.getItem("opcionesSorteadas75días")) || [];
 const sorteo1 = function() {
   if (opcionesSorteadas1.length === composicionCamara.length) {
     opcionesSorteadas1 = [];
@@ -82,7 +82,7 @@ const sorteo1 = function() {
   } while (opcionesSorteadas1.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)));
   opcionesSorteadas1.push(opcionSorteada);
   let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
-  localStorage.setItem("opcionesSorteadas1", JSON.stringify(opcionesSorteadas1));
+  localStorage.setItem("opcionesSorteadas75días", JSON.stringify(opcionesSorteadas1));
   return opcionSorteadaTexto;
 }
 
@@ -92,7 +92,7 @@ const sorteo1 = function() {
 
 	
 
-	let opcionesSorteadas2 = JSON.parse(localStorage.getItem("opcionesSorteadas2")) || [];
+	let opcionesSorteadas2 = JSON.parse(localStorage.getItem("opcionesSorteadas60días")) || [];
 	const sorteo2 = function() {
   		if (opcionesSorteadas2.length === composicionCamara.length) {
     	opcionesSorteadas2 = [];
@@ -102,11 +102,11 @@ const sorteo1 = function() {
 		while (opcionesSorteadas2.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas2.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
-  	localStorage.setItem("opcionesSorteadas2", JSON.stringify(opcionesSorteadas2));
+  	localStorage.setItem("opcionesSorteadas60días", JSON.stringify(opcionesSorteadas2));
   	return opcionSorteadaTexto;
 	}
 
-	let opcionesSorteadas3 = JSON.parse(localStorage.getItem("opcionesSorteadas3")) || [];
+	let opcionesSorteadas3 = JSON.parse(localStorage.getItem("opcionesSorteadas30días")) || [];
 	const sorteo3 = function() {
   		if (opcionesSorteadas3.length === composicionCamara.length) {
     	opcionesSorteadas3 = [];
@@ -116,11 +116,11 @@ const sorteo1 = function() {
   		while (opcionesSorteadas3.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas3.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
-  	localStorage.setItem("opcionesSorteadas3", JSON.stringify(opcionesSorteadas3));
+  	localStorage.setItem("opcionesSorteadas30días", JSON.stringify(opcionesSorteadas3));
   	return opcionSorteadaTexto;
 	}
 
-	let opcionesSorteadas4 = JSON.parse(localStorage.getItem("opcionesSorteadas4")) || [];
+	let opcionesSorteadas4 = JSON.parse(localStorage.getItem("opcionesSorteadas20días")) || [];
 	const sorteo4 = function() {
   		if (opcionesSorteadas4.length === composicionCamara.length) {
     	opcionesSorteadas4 = [];
@@ -130,11 +130,11 @@ const sorteo1 = function() {
   		while (opcionesSorteadas4.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas4.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
-  	localStorage.setItem("opcionesSorteadas4", JSON.stringify(opcionesSorteadas4));
+  	localStorage.setItem("opcionesSorteadas20días", JSON.stringify(opcionesSorteadas4));
   	return opcionSorteadaTexto;
 	}
 
-	let opcionesSorteadas5 = JSON.parse(localStorage.getItem("opcionesSorteadas5")) || [];
+	let opcionesSorteadas5 = JSON.parse(localStorage.getItem("opcionesSorteadas10días")) || [];
 	const sorteo5 = function() {
   		if (opcionesSorteadas5.length === composicionCamara.length) {
     	opcionesSorteadas5 = [];
@@ -144,11 +144,11 @@ const sorteo1 = function() {
   		while (opcionesSorteadas5.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas5.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
-  	localStorage.setItem("opcionesSorteadas5", JSON.stringify(opcionesSorteadas5));
+  	localStorage.setItem("opcionesSorteadas10días", JSON.stringify(opcionesSorteadas5));
   	return opcionSorteadaTexto;
 	}
 
-	let opcionesSorteadas6 = JSON.parse(localStorage.getItem("opcionesSorteadas6")) || [];
+	let opcionesSorteadas6 = JSON.parse(localStorage.getItem("opcionesSorteadas5días")) || [];
 	const sorteo6 = function() {
   		if (opcionesSorteadas6.length === composicionCamara.length) {
     	opcionesSorteadas6 = [];
@@ -158,7 +158,7 @@ const sorteo1 = function() {
   		while (opcionesSorteadas6.some((op) => JSON.stringify(op) === JSON.stringify(opcionSorteada)))
   	opcionesSorteadas6.push(opcionSorteada);
   	let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
-  	localStorage.setItem("opcionesSorteadas6", JSON.stringify(opcionesSorteadas6));
+  	localStorage.setItem("opcionesSorteadas5días", JSON.stringify(opcionesSorteadas6));
   	return opcionSorteadaTexto;
 	}
 
