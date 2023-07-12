@@ -114,71 +114,52 @@ const sorteo1 = function () {
 // Resto del código
 
 let opcionesSorteadas2 = JSON.parse(localStorage.getItem("opcionesSorteadas60días")) || [];
-let primeraParteCompletada = false;
-let disponibles = composicionCamara.slice();
 
-const sorteo2 = function () {
+const sorteo2 = function() {
   if (opcionesSorteadas2.length === composicionCamara.length) {
     opcionesSorteadas2 = [];
-    primeraParteCompletada = false;
-    disponibles = composicionCamara.slice();
   }
 
   let opcionSorteada;
-  if (opcionesSorteadas2.length < 3 || !primeraParteCompletada) {
-    // Sorteo de la primera parte (3 sorteos)
-    opcionSorteada = sortearPrimeraParte();
+
+  if (opcionesSorteadas2.length < 3) {
+    // Sorteo de los 3 primeros
+    let disponibles;
+
+    if (opcionesSorteadas2.length === 0) {
+      disponibles = composicionCamara;
+    } else {
+      const incompatibles = {
+        "orden 1": "orden 2",
+        "orden 2": "orden 1",
+        "orden 3": "orden 4",
+        "orden 4": "orden 3",
+        "orden 5": "orden 6",
+        "orden 6": "orden 5",
+      };
+
+      const opcionesSorteadas = opcionesSorteadas2.map(op => Object.keys(op)[0]);
+      disponibles = composicionCamara.filter(op => !opcionesSorteadas.includes(Object.keys(op)[0]) && !opcionesSorteadas.includes(incompatibles[Object.keys(op)[0]]));
+    }
+
+    const indiceSorteado = Math.floor(Math.random() * disponibles.length);
+    opcionSorteada = disponibles[indiceSorteado];
   } else {
-    // Sorteo de la segunda parte (3 sorteos)
-    opcionSorteada = sortearSegundaParte();
+    // Sorteo de los 3 restantes
+    const primerosSorteados = opcionesSorteadas2.map(op => Object.keys(op)[0]);
+    const restoSorteos = composicionCamara.filter(op => !primerosSorteados.includes(Object.keys(op)[0]));
+
+    const indiceSorteado = Math.floor(Math.random() * restoSorteos.length);
+    opcionSorteada = restoSorteos[indiceSorteado];
   }
 
   opcionesSorteadas2.push(opcionSorteada);
+
   let opcionSorteadaTexto = Object.values(opcionSorteada)[0];
+
   localStorage.setItem("opcionesSorteadas60días", JSON.stringify(opcionesSorteadas2));
+
   return opcionSorteadaTexto;
-};
-
-function sortearPrimeraParte() {
-  let opcionSorteada;
-  let intentos = 0; // Contador de intentos para evitar un bucle infinito
-
-  do {
-    opcionSorteada = disponibles[Math.floor(Math.random() * disponibles.length)];
-    intentos++;
-
-    if (intentos > disponibles.length) {
-      // Si se ha intentado más veces que el número de opciones disponibles,
-      // se considera un bucle infinito y se sale del bucle
-      break;
-    }
-  } while (
-    opcionesSorteadas2.some((op) => {
-      const sorteada = Object.keys(op)[0];
-      const sorteadaNumero = parseInt(sorteada.split(" ")[1]);
-      const opcionNumero = parseInt(Object.keys(opcionSorteada)[0].split(" ")[1]);
-      return Math.abs(sorteadaNumero - opcionNumero) === 1 || sorteadaNumero === opcionNumero;
-    })
-  );
-
-  if (opcionesSorteadas2.length === 2) {
-    primeraParteCompletada = true;
-  }
-
-  disponibles = disponibles.filter(
-    (op) => JSON.stringify(op) !== JSON.stringify(opcionSorteada)
-  );
-
-  return opcionSorteada;
-}
-
-function sortearSegundaParte() {
-  let opcionSorteada;
-  opcionSorteada = disponibles[Math.floor(Math.random() * disponibles.length)];
-  disponibles = disponibles.filter(
-    (op) => JSON.stringify(op) !== JSON.stringify(opcionSorteada)
-  );
-  return opcionSorteada;
 }
 
 let opcionesSorteadas3 =
